@@ -32,28 +32,6 @@
 
 ![登录](https://user-gold-cdn.xitu.io/2018/4/1/1627fa3f064f0ee8?w=1440&h=877&f=png&s=329202)
 
-![文章列表](./view-images/a1.jpg)
-
-![添加文章](./view-images/a2.jpg)
-
-![编辑文章](./view-images/a3.jpg)
-
-![文章草稿](./view-images/a4.jpg)
-
-![标签列表](./view-images/a5.jpg)
-
-![评论管理](./view-images/a7.jpg)
-
-![留言管理](./view-images/a8.jpg)
-
-![项目管理](./view-images/a9.jpg)
-
-![编辑项目](./view-images/a10.jpg)
-
-![音乐列表](./view-images/a11.jpg)
-
-![编辑音乐](./view-images/a12.jpg)
-
 
 ### 相关技术栈：
 
