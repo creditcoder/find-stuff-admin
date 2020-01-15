@@ -1,33 +1,40 @@
-import React from 'react'
-import { ColumnProps } from 'antd/es/table'
+import React from "react";
+import { ColumnProps } from "antd/es/table";
 
 interface ColumnPropsEditable<T> extends ColumnProps<T> {
-  editable?: boolean
+  editable?: boolean;
 }
 
-export const columns:Array<ColumnPropsEditable<any>> = [
+export const columns: Array<ColumnPropsEditable<any>> = [
   {
-    title: '#',
+    title: "#",
     width: 50,
-    key: 'tindex',
-    render: (text, record, dataIndex) => <span>{dataIndex+1}</span>
+    key: "tindex",
+    render: (text, record, dataIndex) => <span>{dataIndex + 1}</span>
   },
   {
-    title: '标题',
-    dataIndex: 'name',
+    title: "name",
+    dataIndex: "name",
     width: 400,
-    key: 'name',
+    key: "name",
     editable: true
   },
   {
-    title: '描述',
-    key: 'descript',
-    dataIndex: 'descript',
+    title: "icon",
+    dataIndex: "icon",
+    width: 400,
+    key: "icon",
     editable: true
   },
   {
-    title: '编辑',
-    dataIndex: 'operation',
+    title: "description",
+    key: "description",
+    dataIndex: "description",
+    editable: true
+  },
+  {
+    title: "operation",
+    dataIndex: "operation",
     width: 150
   }
-]
+];

@@ -1,7 +1,7 @@
 import { http, getAuthorization } from "./http";
 import { API_ROOT } from "./config";
 
-export const login = (params = {}) => http.post("user/login", { ...params });
+export const login = (params = {}) => http.post("auth/signin", { ...params });
 
 export const getArts = (params = {}) => http.get("article/get", { params });
 export const addArticle = (params = {}) =>
@@ -12,11 +12,6 @@ export const editeArt = (id: string, params = {}) =>
 export const delArt = (id: string) => http.delete(`article/delect/${id}`);
 export const getArtId = (id: string, params = {}) =>
   http.get(`article/get/${id}`, { params });
-
-export const fetchTag = (params = {}) => http.get("tag/get", { params });
-export const editeTag = (params = {}) => http.post("tag/edit", { ...params });
-export const addTag = (params = {}) => http.put("tag/add", { ...params });
-export const delTag = (id: string) => http.delete(`tag/delect/${id}`);
 
 export const fetchHero = (params = {}) => http.get("hero/get", { params });
 export const delHero = (id: string) => http.delete(`hero/delect/${id}`);
@@ -39,11 +34,18 @@ export const fetchProject = (params = {}) =>
 export const fetchProjectId = (id: string, params = {}) =>
   http.get(`project/get/${id}`, { params });
 
-export const addMusic = (params = {}) => http.put("music/add", { ...params });
-export const fetchMusic = (params = {}) => http.get("music/get", { params });
-export const delMusic = (id: string) => http.delete(`music/delect/${id}`);
-export const editeMusic = (id: string, params = {}) =>
-  http.post(`music/edite/${id}`, { ...params });
+export const fetchTag = (params = {}) => http.get("tag", { params });
+export const addTag = (params = {}) => http.post("tag", { ...params });
+export const delTag = (id: string) => http.delete(`tag/${id}`);
+export const editTag = (id: string, params = {}) =>
+  http.put(`tag/${id}`, { ...params });
+
+export const fetchLostPost = (params = {}) => http.get("lostpost", { params });
+export const addLostPost = (params = {}) =>
+  http.post("lostpost", { ...params });
+export const delLostPost = (id: string) => http.delete(`lostpost/${id}`);
+export const editLostPost = (id: string, params = {}) =>
+  http.put(`lostpost/${id}`, { ...params });
 
 export const uploadConfig = () => ({
   action: `${API_ROOT}music/upload`,
