@@ -47,8 +47,16 @@ export const delLostPost = (id: string) => http.delete(`lostpost/${id}`);
 export const editLostPost = (id: string, params = {}) =>
   http.put(`lostpost/${id}`, { ...params });
 
+export const fetchFoundPost = (params = {}) =>
+  http.get("foundpost", { params });
+export const addFoundPost = (params = {}) =>
+  http.post("foundpost", { ...params });
+export const delFoundPost = (id: string) => http.delete(`foundpost/${id}`);
+export const editFoundPost = (id: string, params = {}) =>
+  http.put(`foundpost/${id}`, { ...params });
+
 export const uploadConfig = () => ({
-  action: `${API_ROOT}music/upload`,
+  action: `${API_ROOT}/upload/photo`,
   headers: {
     Authorization: getAuthorization()
   }

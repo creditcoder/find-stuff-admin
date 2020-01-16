@@ -119,5 +119,22 @@ export const menuConfig: menuType[] = [
         path: "/lostpost-add"
       }
     ]
+  },
+  {
+    title: "Found posts",
+    key: "found",
+    icon: "play-circle",
+    children: [
+      {
+        title: "Found posts",
+        key: "foundpost-list",
+        path: "/foundposts"
+      },
+      {
+        title: "add found post",
+        key: "foundpost-add",
+        path: "/foundpost-add"
+      }
+    ]
   }
 ];

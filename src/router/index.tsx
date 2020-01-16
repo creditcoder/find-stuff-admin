@@ -20,6 +20,9 @@ const Tags = loadable(() => import("../pages/tags"));
 const LostPostAdd = loadable(() => import("../pages/lostpost-add"));
 const LostPostList = loadable(() => import("../pages/lostposts"));
 
+const FoundPostAdd = loadable(() => import("../pages/foundpost-add"));
+const FoundPostList = loadable(() => import("../pages/foundposts"));
+
 const Home = loadable(() => import("../pages/home"));
 export interface routeType {
   path: string;
@@ -86,6 +89,14 @@ export const routes = [
       {
         path: "/lostposts",
         component: LostPostList
+      },
+      {
+        path: "/foundpost-add",
+        component: FoundPostAdd
+      },
+      {
+        path: "/foundposts",
+        component: FoundPostList
       },
       {
         path: "/",
