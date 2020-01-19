@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, Input, Button, Upload, Icon, message } from "antd";
 import { UploadChangeParam } from "antd/es/upload";
-import { uploadConfig, addLostPost, editLostPost } from "../../utils/api";
+import { uploadConfig, addStuffPost, editStuffPost } from "../../utils/api";
 import { useQuery } from "../../utils/index";
 
 import "./index.scss";
@@ -10,7 +10,7 @@ const formItemLayout = {
   labelCol: { span: 5 },
   wrapperCol: { span: 19 }
 };
-function AddLostPost(props: any) {
+function AddStuffPost(props: any) {
   const form = props.form;
   const query = useQuery();
   const posterUploadConfig = {
@@ -49,7 +49,7 @@ function AddLostPost(props: any) {
   }
 
   async function add(values: any) {
-    const { data } = await addLostPost(values);
+    const { data } = await addStuffPost(values);
     if (data.code) {
       message.success(data.message);
       props.history.push("/lostposts");
@@ -57,7 +57,7 @@ function AddLostPost(props: any) {
   }
 
   async function edit(values: any, id: string) {
-    const { data } = await editLostPost(id, values);
+    const { data } = await editStuffPost(id, values);
     if (data.code) {
       message.success(data.message);
       props.history.push("/lostposts");
@@ -120,4 +120,4 @@ function AddLostPost(props: any) {
   );
 }
 
-export default Form.create({ name: "addProject" })(AddLostPost);
+export default Form.create({ name: "addProject" })(AddStuffPost);

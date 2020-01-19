@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Table, message } from "antd";
 import { columns } from "./config";
 import PageLayout from "../../common/components/page-layout";
-import { fetchLostPost, delLostPost } from "../../utils/api";
+import { fetchStuffPost, delStuffPost } from "../../utils/api";
 import { Operate } from "./oprations";
 import "./index.scss";
 
@@ -21,17 +21,17 @@ const Projects = (props: any) => {
   const [page, setPage] = useState({ current: 1, total: 0 });
   useEffect(() => {
     (async () => {
-      const { data } = await fetchLostPost({ current_page: page.current });
+      const { data } = await fetchStuffPost({ current_page: page.current });
       setTableData(data || []);
       // setPage({current: data.result.pagination.current_page, total: data.result.pagination.total})
     })();
   }, [refresh]);
 
   function edit(id: string) {
-    props.history.push(`/lostpost-add?id=${id}`);
+    props.history.push(`/stuffpost-add?id=${id}`);
   }
   async function del(id: string) {
-    const { data } = await delLostPost(id);
+    const { data } = await delStuffPost(id);
     setRefresh(refresh + 1);
     setPage({ current: 1, total: 0 });
     message.success(data.message);
@@ -55,10 +55,10 @@ const Projects = (props: any) => {
   });
   const components = { body: { cell: EditCell } };
   return (
-    <PageLayout title="Lost Posts">
+    <PageLayout title="Posts">
       <Table
         components={components}
-        className="lostposts"
+        className="stuffposts"
         columns={tableColumns}
         dataSource={tableData}
         bordered

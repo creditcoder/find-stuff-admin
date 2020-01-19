@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import PageLayout from "../../common/components/page-layout";
 import Add from "./add";
-import { fetchLostPost } from "../../utils/api";
+import { fetchStuffPost } from "../../utils/api";
 import { useQuery } from "../../utils/index";
 const LostPostAdd = (props: any) => {
   const [lostPost, setLostPost] = useState({});
@@ -13,7 +13,7 @@ const LostPostAdd = (props: any) => {
     (async () => {
       const _id = query.get("id");
       if (_id) {
-        const { data } = await fetchLostPost({ _id });
+        const { data } = await fetchStuffPost({ _id });
         if (data.code) {
           setLostPost(data.result[0]);
         }

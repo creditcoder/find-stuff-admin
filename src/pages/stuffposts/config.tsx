@@ -1,6 +1,6 @@
 import React from "react";
 import { ColumnProps } from "antd/es/table";
-import { DOWNLOAD_ROOT } from "../../utils/config";
+import { ORIGINAL_ROOT } from "../../utils/config";
 
 export const columns: ColumnProps<any>[] = [
   {
@@ -11,9 +11,9 @@ export const columns: ColumnProps<any>[] = [
   },
   {
     title: "user",
-    dataIndex: "user",
+    dataIndex: "user.name",
     width: 160,
-    key: "user",
+    key: "user._id",
     render: (text, record, dataIndex) => (
       <a href={record.url} target="_blank">
         {text}
@@ -59,13 +59,13 @@ export const columns: ColumnProps<any>[] = [
       photos.map((photo: any, i: number) => (
         <a
           key={i}
-          href={DOWNLOAD_ROOT + "download/photo?path=" + photo.path}
+          href={ORIGINAL_ROOT + "download/photo?path=" + photo.path}
           target="_brank"
           style={{ padding: "10px" }}
         >
           <img
             width="100"
-            src={DOWNLOAD_ROOT + "download/photo?path=" + photo.path}
+            src={ORIGINAL_ROOT + "download/photo?path=" + photo.path}
           />
         </a>
       ))
