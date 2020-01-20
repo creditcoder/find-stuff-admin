@@ -55,6 +55,11 @@ function AddProfile(props: TagsProps) {
           rules: [{ message: "Type service content!" }]
         })(<TextArea rows={4} placeholder="service" />)}
       </Form.Item>
+      <Form.Item label="phone">
+        {form.getFieldDecorator("phone", {
+          rules: [{ required: true, message: "Type admin phone number!" }]
+        })(<Input placeholder="phone number" />)}
+      </Form.Item>
       <div className="btnbox">
         <Button type="primary" htmlType="submit" className="btn">
           add

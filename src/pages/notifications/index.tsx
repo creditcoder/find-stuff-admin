@@ -51,9 +51,7 @@ const Notification = () => {
     if (editPrams.index === null) return;
     let params = { ...record, ...editPrams };
     await editNotification(params._id, {
-      name: params.name,
-      icon: params.icon,
-      description: params.description
+      content: params.content
     });
     params = null;
     setRefresh(refresh + 1);

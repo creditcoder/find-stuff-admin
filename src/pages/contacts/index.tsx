@@ -47,9 +47,9 @@ const Contact = () => {
     if (editPrams.index === null) return;
     let params = { ...record, ...editPrams };
     await editContact(params._id, {
-      name: params.name,
-      icon: params.icon,
-      description: params.description
+      city: params.city,
+      district: params.district,
+      number: params.number
     });
     params = null;
     setRefresh(refresh + 1);

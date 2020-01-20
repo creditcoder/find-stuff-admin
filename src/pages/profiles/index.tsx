@@ -32,7 +32,7 @@ function EditCell(props: any) {
   return <td>{res}</td>;
 }
 
-const News = () => {
+const Profile = () => {
   const [tableData, setTableData] = useState([]);
   const [editingKey, setEditingKey] = useState();
   const [refresh, setRefresh] = useState(1);
@@ -46,10 +46,13 @@ const News = () => {
   async function save(record: any) {
     if (editPrams.index === null) return;
     let params = { ...record, ...editPrams };
+
     await editProfile(params._id, {
-      name: params.name,
-      icon: params.icon,
-      description: params.description
+      version: params.version,
+      share: params.share,
+      about: params.about,
+      service: params.service,
+      phone: params.phone
     });
     params = null;
     setRefresh(refresh + 1);
@@ -117,4 +120,4 @@ const News = () => {
   );
 };
 
-export default News;
+export default Profile;

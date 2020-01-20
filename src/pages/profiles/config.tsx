@@ -37,6 +37,12 @@ export const columns: Array<ColumnPropsEditable<any>> = [
     editable: true
   },
   {
+    title: "phone",
+    key: "phone",
+    dataIndex: "phone",
+    editable: true
+  },
+  {
     title: "operation",
     dataIndex: "operation",
     width: 150
