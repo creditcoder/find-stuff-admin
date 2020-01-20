@@ -170,5 +170,22 @@ export const menuConfig: menuType[] = [
         path: "/contact-add"
       }
     ]
+  },
+  {
+    title: "profile",
+    key: "profile",
+    icon: "play-circle",
+    children: [
+      {
+        title: "all profiles",
+        key: "profile-all",
+        path: "/profiles"
+      },
+      {
+        title: "add new profile",
+        key: "profile-add",
+        path: "/profile-add"
+      }
+    ]
   }
 ];

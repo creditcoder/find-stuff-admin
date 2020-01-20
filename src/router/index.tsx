@@ -20,6 +20,9 @@ const Tags = loadable(() => import("../pages/tags"));
 const NewsAdd = loadable(() => import("../pages/news-add"));
 const News = loadable(() => import("../pages/news"));
 
+const ProfileAdd = loadable(() => import("../pages/profile-add"));
+const Profiles = loadable(() => import("../pages/profiles"));
+
 const ContactAdd = loadable(() => import("../pages/contact-add"));
 const Contacts = loadable(() => import("../pages/contacts"));
 
@@ -103,6 +106,14 @@ export const routes = [
       {
         path: "/news",
         component: News
+      },
+      {
+        path: "/profile-add",
+        component: ProfileAdd
+      },
+      {
+        path: "/profiles",
+        component: Profiles
       },
       {
         path: "/contact-add",
