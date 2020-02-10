@@ -3,6 +3,8 @@ import { API_ROOT, API2_ROOT, ORIGINAL_ROOT } from "./config";
 
 export const login = (params = {}) =>
   http_org.post("auth/login", { ...params });
+export const register = (params = {}) =>
+  http_org.post("auth/register", { ...params });
 
 export const getArts = (params = {}) => http.get("article/get", { params });
 export const addArticle = (params = {}) =>
