@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Table, message } from "antd";
+import { PaginationConfig } from "antd/es/pagination";
 import { columns } from "./config";
 import PageLayout from "../../common/components/page-layout";
 import { fetchStuffPost, delStuffPost, adsStuffPost } from "../../utils/api";
@@ -18,14 +19,40 @@ function EditCell(props: any) {
 const Projects = (props: any) => {
   const [tableData, setTableData] = useState([]);
   const [refresh, setRefresh] = useState(1);
-  const [page, setPage] = useState({ current: 1, total: 0 });
+
+  const [page, setPage] = useState({ current: 1, total: 0, pageSize: 10 });
+
+  const [loading, setLoading] = useState(false);
+  const [load, setLoad] = useState(0);
+
+  async function getList() {
+    const { data } = await fetchStuffPost({
+      current: page.current,
+      pageSize: page.pageSize
+    });
+    setTableData(data.list || []);
+
+    if (data.success) {
+      setPage({
+        current: data.pagination.current,
+        total: data.pagination.total,
+        pageSize: data.pagination.pageSize
+      });
+    }
+  }
+
   useEffect(() => {
-    (async () => {
-      const { data } = await fetchStuffPost({ current_page: page.current });
-      setTableData(data || []);
-      // setPage({current: data.result.pagination.current_page, total: data.result.pagination.total})
-    })();
-  }, [refresh]);
+    getList();
+  }, [load]);
+
+  function handleTableChange(p: PaginationConfig) {
+    setPage({
+      current: p.current || 1,
+      total: p.total || 0,
+      pageSize: p.pageSize || 10
+    });
+    setLoad(load + 1);
+  }
 
   function edit(id: string) {
     props.history.push(`/stuffpost-add?id=${id}`);
@@ -33,13 +60,13 @@ const Projects = (props: any) => {
   async function ads(id: string, value: boolean) {
     const { data } = await adsStuffPost(id, value);
     setRefresh(refresh + 1);
-    setPage({ current: 1, total: 0 });
+    setPage({ current: 1, total: 0, pageSize: 10 });
     message.success(data.message);
   }
   async function del(id: string) {
     const { data } = await delStuffPost(id);
     setRefresh(refresh + 1);
-    setPage({ current: 1, total: 0 });
+    setPage({ current: 1, total: 0, pageSize: 10 });
     message.success(data.message);
   }
 
@@ -72,6 +99,8 @@ const Projects = (props: any) => {
         size="middle"
         rowKey="_id"
         pagination={page}
+        loading={loading}
+        onChange={handleTableChange}
       />
     </PageLayout>
   );
