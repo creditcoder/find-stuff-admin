@@ -40,6 +40,16 @@ http.interceptors.request.use(
   }
 );
 
+http_admin.interceptors.request.use(
+  (config: AxiosRequestConfig) => {
+    config.headers.auth_token = getAuthorization();
+    return config;
+  },
+  error => {
+    return Promise.reject(error);
+  }
+);
+
 http.interceptors.response.use(
   (
     response: AxiosResponse<any>

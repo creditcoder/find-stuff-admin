@@ -18,8 +18,6 @@ function EditCell(props: any) {
 
 const Projects = (props: any) => {
   const [tableData, setTableData] = useState([]);
-  const [refresh, setRefresh] = useState(1);
-
   const [page, setPage] = useState({ current: 1, total: 0, pageSize: 10 });
 
   const [loading, setLoading] = useState(false);
@@ -59,15 +57,13 @@ const Projects = (props: any) => {
   }
   async function ads(id: string, value: boolean) {
     const { data } = await adsStuffPost(id, value);
-    setRefresh(refresh + 1);
-    setPage({ current: 1, total: 0, pageSize: 10 });
-    message.success(data.message);
+    setLoad(load + 1);
+    message.success(data.msg);
   }
   async function del(id: string) {
     const { data } = await delStuffPost(id);
-    setRefresh(refresh + 1);
-    setPage({ current: 1, total: 0, pageSize: 10 });
-    message.success(data.message);
+    setLoad(load + 1);
+    message.success(data.msg);
   }
 
   const tableColumns = columns.map(col => {

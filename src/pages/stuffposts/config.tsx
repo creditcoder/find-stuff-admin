@@ -61,28 +61,28 @@ export const columns: ColumnProps<any>[] = [
     width: 50,
     dataIndex: "fee"
   },
-  // {
-  //   title: "照片",
-  //   key: "photos",
-  //   width: 320,
-  //   dataIndex: "photos",
-  //   render: photos =>
-  //     photos.map((photo: any, i: number) => (
-  //       <a
-  //         key={i}
-  //         href={ORIGINAL_ROOT + "download/photo?path=" + photo.path}
-  //         target="_brank"
-  //         style={{ padding: "10px" }}
-  //       >
-  //         {
-  //           <img
-  //             width="100"
-  //             src={ORIGINAL_ROOT + "download/photo?path=" + photo.path}
-  //           />
-  //         }
-  //       </a>
-  //     ))
-  // },
+  {
+    title: "照片",
+    key: "photos",
+    width: 320,
+    dataIndex: "photos",
+    render: photos =>
+      photos.map((photo: any, i: number) => (
+        <a
+          key={i}
+          href={ORIGINAL_ROOT + "download/photo?path=" + photo.path}
+          target="_brank"
+          style={{ padding: "10px" }}
+        >
+          {
+            <img
+              width="100"
+              src={ORIGINAL_ROOT + "download/photo?path=" + photo.path}
+            />
+          }
+        </a>
+      ))
+  },
   {
     title: "编辑",
     key: "operation",
