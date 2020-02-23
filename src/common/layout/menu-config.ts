@@ -69,7 +69,7 @@ export const menuConfig: menuType[] = [
         path: "/contacts"
       },
       {
-        title: "添加电话号码",
+        title: "添加电话号",
         key: "contact-add",
         path: "/contact-add"
       }
