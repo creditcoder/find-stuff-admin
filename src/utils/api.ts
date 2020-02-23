@@ -82,6 +82,7 @@ export const editNotification = (id: string, params = {}) =>
 
 export const fetchStuffPost = (params = {}) =>
   http_admin.get("stuffpost", { params });
+
 export const addStuffPost = (params = {}) =>
   http_admin.post("stuffpost", { ...params });
 export const delStuffPost = (id: string) =>

@@ -37,6 +37,8 @@ const Notifications = loadable(() => import("../pages/notifications"));
 const StuffPostAdd = loadable(() => import("../pages/stuffpost-add"));
 const StuffPostList = loadable(() => import("../pages/stuffposts"));
 
+const ReportList = loadable(() => import("../pages/reports"));
+
 const Home = loadable(() => import("../pages/home"));
 export interface routeType {
   path: string;
@@ -151,6 +153,10 @@ export const routes = [
       {
         path: "/stuffposts",
         component: StuffPostList
+      },
+      {
+        path: "/reports",
+        component: ReportList
       },
       {
         path: "/",

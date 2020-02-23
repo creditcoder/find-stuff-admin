@@ -1,6 +1,10 @@
 import React from "react";
 import { Form, Input, Button } from "antd";
 import { FormComponentProps } from "antd/es/form";
+
+import AddressPicker from "react-address-picker-cc";
+import { district } from "./district";
+
 import "./index.scss";
 import { addContact } from "../../utils/api";
 
@@ -33,20 +37,20 @@ function AddContact(props: TagsProps) {
       {...formItemLayout}
       className="addtag"
     >
-      <Form.Item label="市">
+      <Form.Item label="城市">
         {form.getFieldDecorator("city", {
           rules: [{ required: true, message: "Type contact city!" }]
-        })(<Input placeholder="市" />)}
+        })(<Input placeholder="城市" />)}
       </Form.Item>
-      <Form.Item label="区">
+      <Form.Item label="小区名">
         {form.getFieldDecorator("district", {
           rules: [{ required: true, message: "Type contact district!" }]
-        })(<Input placeholder="区" />)}
+        })(<Input placeholder="小区名" />)}
       </Form.Item>
-      <Form.Item label="电话号码">
+      <Form.Item label="电话号">
         {form.getFieldDecorator("number", {
           rules: [{ required: true, message: "Type contact number!" }]
-        })(<Input placeholder="电话号码" />)}
+        })(<Input placeholder="电话号" />)}
       </Form.Item>
       <div className="btnbox">
         <Button type="primary" htmlType="submit" className="btn">
