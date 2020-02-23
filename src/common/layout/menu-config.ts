@@ -9,18 +9,18 @@ export interface menuType {
 export const menuConfig: menuType[] = [
   {
     title: "文章与举报投诉",
-    key: "post",
+    key: "stuffposts",
     icon: "play-circle",
     children: [
       {
         title: "文章列表",
-        key: "stuffpost-list",
+        key: "stuffposts-list",
         path: "/stuffposts"
       },
       {
         title: "举报投诉列表",
-        key: "report-list",
-        path: "/reports"
+        key: "stuffposts-add",
+        path: "/stuffposts-add"
       }
     ]
   },
@@ -53,8 +53,8 @@ export const menuConfig: menuType[] = [
       },
       {
         title: "添加通知",
-        key: "notification-add",
-        path: "/notification-add"
+        key: "notifications-add",
+        path: "/notifications-add"
       }
     ]
   },
@@ -70,36 +70,36 @@ export const menuConfig: menuType[] = [
       },
       {
         title: "添加电话号",
-        key: "contact-add",
-        path: "/contact-add"
+        key: "contacts-add",
+        path: "/contacts-add"
       }
     ]
   },
   {
     title: "应用信息",
-    key: "profile",
+    key: "profiles",
     icon: "play-circle",
     children: [
       {
         title: "列表",
-        key: "profile-all",
+        key: "profiles-all",
         path: "/profiles"
       },
       {
         title: "添加资料",
-        key: "profile-add",
-        path: "/profile-add"
+        key: "profiles-add",
+        path: "/profiles-add"
       }
     ]
   },
   {
     title: "用户",
-    key: "user",
+    key: "users",
     icon: "play-circle",
     children: [
       {
         title: "列表",
-        key: "user-all",
+        key: "users-all",
         path: "/users"
       }
     ]

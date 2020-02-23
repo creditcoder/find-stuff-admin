@@ -107,7 +107,7 @@ export const routes = [
         component: Tags
       },
       {
-        path: "/notification-add",
+        path: "/notifications-add",
         component: NotificationAdd
       },
       {
@@ -123,7 +123,7 @@ export const routes = [
         component: News
       },
       {
-        path: "/profile-add",
+        path: "/profiles-add",
         component: ProfileAdd
       },
       {
@@ -139,23 +139,23 @@ export const routes = [
         component: Users
       },
       {
-        path: "/contact-add",
+        path: "/contacts-add",
         component: ContactAdd
       },
       {
         path: "/contacts",
         component: Contacts
       },
-      {
-        path: "/stuffpost-add",
-        component: StuffPostAdd
-      },
+      // {
+      //   path: "/stuffposts-add",
+      //   component: StuffPostAdd
+      // },
       {
         path: "/stuffposts",
         component: StuffPostList
       },
       {
-        path: "/reports",
+        path: "/stuffposts-add",
         component: ReportList
       },
       {
