@@ -17,7 +17,7 @@ export const columns: ColumnProps<any>[] = [
     key: "user._id",
     render: (text, record, dataIndex) => (
       <a href={record.url} target="_blank">
-        {record.user.photo && (
+        {record.user && (
           <Avatar
             size="large"
             src={ORIGINAL_ROOT + "download/photo?path=" + record.user.photo}
