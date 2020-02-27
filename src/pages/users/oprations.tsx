@@ -20,16 +20,20 @@ export function Operate(props: any) {
           <Button type="link" onClick={() => props.edit(rowIndex)}>
             修改
           </Button>
-          <Divider type="vertical" />
-          <Popconfirm
-            placement="topRight"
-            title={"Are you sure?"}
-            onConfirm={() => props.del(record)}
-            okText="Yes"
-            cancelText="No"
-          >
-            <Button>删除</Button>
-          </Popconfirm>
+          {false && (
+            <>
+              <Divider type="vertical" />
+              <Popconfirm
+                placement="topRight"
+                title={"Are you sure?"}
+                onConfirm={() => props.del(record)}
+                okText="Yes"
+                cancelText="No"
+              >
+                <Button>删除</Button>
+              </Popconfirm>
+            </>
+          )}
         </>
       )}
     </div>
