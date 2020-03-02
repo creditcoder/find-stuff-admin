@@ -23,6 +23,7 @@ export const columns: ColumnProps<any>[] = [
             src={ORIGINAL_ROOT + "download/photo?path=" + record.user.photo}
           />
         )}
+        <br/>
         {text}
       </a>
     )
