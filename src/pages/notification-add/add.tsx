@@ -38,7 +38,8 @@ function AddContact(props: TagsProps) {
   };
 
   useEffect(() => {
-    setCity(firstAddr + " " + secondCity);
+    //setCity(firstAddr + " " + secondCity);
+    setCity(secondCity);
   }, [secondCity, firstAddr]);
 
   return (
