@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider, Button, Popconfirm } from "antd";
+import { Divider, Button, Popconfirm, Checkbox } from "antd";
 
 export function Operate(props: any) {
   const { editing, rowIndex, record } = props;
@@ -20,6 +20,14 @@ export function Operate(props: any) {
           <Button type="link" onClick={() => props.edit(rowIndex)}>
             修改
           </Button>
+          <Divider type="vertical" />
+          <Checkbox
+            onChange={e => props.block(record._id, e.target.checked)}
+            checked={record.block}
+          >
+            {"禁止"}
+          </Checkbox>
+
           {false && (
             <>
               <Divider type="vertical" />
